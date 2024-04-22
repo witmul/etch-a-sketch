@@ -1,11 +1,18 @@
 document.body.onload = addElement(16);
 const btnRefresh = document.querySelector(".btn-refresh")
-// btnRock.addEventListener("click", ()=> {playRound("rock", getComputerChoice())})
 
 btnRefresh.addEventListener('click', function() {
-  const userInput = prompt('Please enter some text:');
-  document.querySelectorAll('.box').forEach(e => e.remove()); 
-  addElement(userInput);
+  const userInput = prompt('Please enter any number from 2 to 200:');
+  let roundedUserInput = Math.ceil(userInput);
+  if (!isNaN(roundedUserInput) && roundedUserInput >= 2 && roundedUserInput <= 200) {
+    document.querySelectorAll('.box').forEach(e => e.remove()); 
+    addElement(roundedUserInput);
+  }else{
+    document.querySelectorAll('.box').forEach(e => e.remove()); 
+    addElement(16);
+    console.log("Input value is not a number or is not between 2 and 200.");
+  }
+
 });
 
 function addElement(n) {
