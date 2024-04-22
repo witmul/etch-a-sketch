@@ -3,3 +3,6 @@
     flex-wrap: wrap;
 }
 
+.paint-on-hover{
+    background-color: blue;
+}

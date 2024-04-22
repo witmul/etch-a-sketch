@@ -16,7 +16,11 @@ function addElement(n) {
     newDiv.className = "box";
     newDiv.style.border = `${borderSize}px solid black`;
     newDiv.style.width = `${sqrSide}px`;
-    newDiv.style.aspectRatio = "1/1"
+    newDiv.style.aspectRatio = "1/1";
+    newDiv.addEventListener("mouseover", ()=> {newDiv.classList.add("paint-on-hover");})
     currentDiv.appendChild(newDiv);
   }
 }
+
+
+
