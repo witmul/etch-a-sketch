@@ -1,5 +1,12 @@
-document.body.onload = addElement(100);
+document.body.onload = addElement(16);
+const btnRefresh = document.querySelector(".btn-refresh")
+// btnRock.addEventListener("click", ()=> {playRound("rock", getComputerChoice())})
 
+btnRefresh.addEventListener('click', function() {
+  const userInput = prompt('Please enter some text:');
+  document.querySelectorAll('.box').forEach(e => e.remove()); 
+  addElement(userInput);
+});
 
 function addElement(n) {
   const numBoxes = n*n
@@ -17,7 +24,7 @@ function addElement(n) {
     newDiv.style.border = `${borderSize}px solid black`;
     newDiv.style.width = `${sqrSide}px`;
     newDiv.style.aspectRatio = "1/1";
-    newDiv.addEventListener("mouseover", ()=> {newDiv.classList.add("paint-on-hover");})
+    newDiv.addEventListener("mouseover", function() {newDiv.classList.add("paint-on-hover");})
     currentDiv.appendChild(newDiv);
   }
 }
